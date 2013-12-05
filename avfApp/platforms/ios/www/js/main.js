@@ -10,9 +10,7 @@ $('#research').on('pageinit', function(){
 });
 
 $('#instagrampage').on('pageinit', function(){
-    //code needed for instagram page goes here
-    
-    
+    //code needed for instagram API page goes here
     
     $("#viewphotos").on("click", function(){
         //URL to access recent Instagram photos that are tagged with the word "beach".
@@ -39,11 +37,21 @@ $('#instagrampage').on('pageinit', function(){
         
     }; //end getInstagramPhotos()
     
+});
+
+$('#weatherpage').on('pageinit', function(){
+    //code needed for weather API page goes here.
     
+    $("#viewweather").on("click", function(){
+        //URL to access Weather Source API.
+        var url = "https://api.weathersource.com/v1/d3846647f5a2668d6143/history_by_postal_code.json?period=day&postal_code_eq=33770&country_eq=US&fields=postal_code,tempMax,tempAvg,tempMin,precip,windSpdAvg,feelsLikeMax,feelsLikeAvg,relHumMax,relHumAvg"
+        $.getJSON(url, getWeatherData);
+    });
     
-    
-    
-    
-    
+    var getWeatherData = function(forecast) {
+        
+        console.log(forecast); //To see what weather data I receive from Weather Source.
+        
+    }; //end getWeatherData
     
 })
