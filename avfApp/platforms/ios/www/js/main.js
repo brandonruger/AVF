@@ -44,14 +44,27 @@ $('#weatherpage').on('pageinit', function(){
     
     $("#viewweather").on("click", function(){
         //URL to access Weather Source API.
-        var url = "https://api.weathersource.com/v1/d3846647f5a2668d6143/history_by_postal_code.json?period=day&postal_code_eq=33770&country_eq=US&fields=postal_code,tempMax,tempAvg,tempMin,precip,windSpdAvg,feelsLikeMax,feelsLikeAvg,relHumMax,relHumAvg"
-        $.getJSON(url, getWeatherData);
-    });
+        //Weather key = 1cfe0a133d6e5228
+        var urlAdd = "http://api.wunderground.com/api/1cfe0a133d6e5228/conditions/q/CA/San_Francisco.json"
+    //    $.getJSON(url, getWeatherData);
+    //});
+    //
+    //var getWeatherData = function(forecast) {
+    //    
+    //    console.log(forecast); //To see what weather data I receive from Weather Source.
+    //    
+    //}; //end getWeatherData
     
-    var getWeatherData = function(forecast) {
-        
-        console.log(forecast); //To see what weather data I receive from Weather Source.
-        
-    }; //end getWeatherData
+        $.ajax({
+            url: urlAdd,
+            dataType: "jsonp",
+            success: function(forecast){
+                console.log(forecast);
+                
+               
+            }
+        })
+    })
+    
     
 })
