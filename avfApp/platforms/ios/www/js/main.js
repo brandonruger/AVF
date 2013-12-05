@@ -45,7 +45,7 @@ $('#weatherpage').on('pageinit', function(){
     $("#viewweather").on("click", function(){
         //URL to access Weather Source API.
         //Weather key = 1cfe0a133d6e5228
-        var urlAdd = "http://api.wunderground.com/api/1cfe0a133d6e5228/conditions/q/CA/San_Francisco.json"
+        var urlAdd = "http://api.wunderground.com/api/1cfe0a133d6e5228/conditions/q/33767.json"
     //    $.getJSON(url, getWeatherData);
     //});
     //
@@ -61,6 +61,13 @@ $('#weatherpage').on('pageinit', function(){
             success: function(forecast){
                 console.log(forecast);
                 
+                var temp = "<li>Temperature: " + forecast.current_observation.temperature_string + "</li>";
+                var feelsLike = "<li>Feels Like: " + forecast.current_observation.feelslike_string + "</li>";
+                var heatIndex = "<li>Heat Index: " + forecast.current_observation.heat_index_string + "</li>";
+                var precip = "<li>Precipiation: " + forecast.current_observation.precip_today_string + "</li>";
+                var image = "<li><img src='" + forecast.current_observation.icon_url + "' alt='" + forecast.current_observation.icon + "' /></li>";
+                
+                $("#weatherdata").append(temp).append(feelsLike).append(heatIndex).append(precip).append(image);
                
             }
         })
