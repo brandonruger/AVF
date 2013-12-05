@@ -12,4 +12,17 @@ $('#research').on('pageinit', function(){
 $('#instagrampage').on('pageinit', function(){
     //code needed for instagram page goes here
     
+    //URL to access recent Instagram photos that are tagged with the word "beach".
+    var url = "https://api.instagram.com/v1/tags/beach/media/recent?client_id=18839eda02dc42e39ddfe9b7f77d1b61";
+    
+    $.getJSON(url, getInstagramPhotos);
+    
+    var getInstagramPhotos = function(feed) {
+        console.log(feed);
+        
+        
+    }; //end getInstagramPhotos()
+    
+    
+    
 })
