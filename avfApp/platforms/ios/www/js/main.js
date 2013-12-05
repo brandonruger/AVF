@@ -7,4 +7,9 @@ $('#home').on('pageinit', function(){
 
 $('#research').on('pageinit', function(){
     //code needed for research page goes here
+});
+
+$('#instagrampage').on('pageinit', function(){
+    //code needed for instagram page goes here
+    
 })
