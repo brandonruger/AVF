@@ -21,7 +21,22 @@ $('#instagrampage').on('pageinit', function(){
     });
     
     var getInstagramPhotos = function(feed) {
-        console.log(feed);
+        
+        console.log(feed); //To see what data I am getting back from Instagram.
+        
+        //example HTML for pictures:
+        // <li><img src='{url}' alt='{caption}' /></li>
+        
+        $.each(feed.data, function(index, photodata){
+            console.log(photodata.images.standard_resolution.url); //Check to make sure targeting right URL's for photos.
+            var photos = "<li><img src='" + photodata.images.standard_resolution.url + "' alt='" + photodata.likes.count + "' /></li>";
+            
+            $("#instagramdata").append(photos); //Add downloaded photos into "instagramdata" ul.
+            
+        }); //end each loop
+        
+        
+        
     }; //end getInstagramPhotos()
     
     
