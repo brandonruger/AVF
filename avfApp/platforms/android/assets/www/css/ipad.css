@@ -1,0 +1,53 @@
+/*Brandon Ruger
+ *AVF 1312
+ *CSS for iPad Horizontal Display*/
+
+#courseinfo {
+    margin-left: 5px;
+    padding-left: 10px;
+    list-style-type: none;
+    border: 1px solid black;
+    background-image: url(img/beach.jpg);
+    background-position: left center;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    font: 20pt Helvetica;
+}
+
+a {
+    font: 5px;
+}
+
+img[alt] {
+    border: 1px solid red;
+    max-width: 20%;
+    float: left;
+}
+
+#instagramdata {
+    list-style-type: none;
+}
+
+section {
+    background-image: url(img/background.png);
+}
+
+ul li a {
+   font: 15pt Helvetica;
+   background-color: #046380;
+   
+}
+
+li[data-role]{
+    background-color: #EFECCA;
+    font: 20pt Helvetica;
+    color: black;
+}
+
+.ui-body-c .ui-link-inherit {
+    color: white !important;
+}
+
+.ui-bar-b {
+    background-color: #EFECCA !important; /*Trying to target listview bg color, but cannot seem to target correct element */
+}
