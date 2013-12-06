@@ -21,3 +21,23 @@ img[alt] {
 #instagramdata {
     list-style-type: none;
 }
+
+section {
+    background-image: url(img/background.png);
+}
+
+ul li a {
+   font: 10pt Helvetica;
+   background-color: #046380;
+   color: white; /*Trying to target the button text, but can't seem to target correct element.*/
+}
+
+li[data-role] {
+    background-color: #EFECCA !important; /*Trying to edit background of listview heading, but can't seem to target correct element.*/
+    font: 20pt Helvetica;
+    color: black;
+}
+
+.ui-body-c .ui-link-inherit {
+    color: white !important; /*Tried using element inspector to target button text, but didn't work*/
+}

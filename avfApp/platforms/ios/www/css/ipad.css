@@ -9,7 +9,9 @@
     border: 1px solid black;
     background-image: url(img/beach.jpg);
     background-position: left center;
+    background-repeat: no-repeat;
     max-width: 100%;
+    font: 20pt Helvetica;
 }
 
 a {
@@ -28,4 +30,24 @@ img[alt] {
 
 section {
     background-image: url(img/background.png);
+}
+
+ul li a {
+   font: 15pt Helvetica;
+   background-color: #046380;
+   
+}
+
+li[data-role]{
+    background-color: #EFECCA;
+    font: 20pt Helvetica;
+    color: black;
+}
+
+.ui-body-c .ui-link-inherit {
+    color: white !important;
+}
+
+.ui-bar-b {
+    background-color: #EFECCA !important; /*Trying to target listview bg color, but cannot seem to target correct element */
 }
