@@ -14,7 +14,7 @@ $('#instagrampage').on('pageinit', function(){
     
     $("#viewphotos").on("click", function(){
         //URL to access recent Instagram photos that are tagged with the word "beach".
-        var url = "https://api.instagram.com/v1/tags/beach/media/recent?callback=?&amp;client_id=18839eda02dc42e39ddfe9b7f77d1b61";
+        var url = "https://api.instagram.com/v1/tags/clearwaterbeach/media/recent?callback=?&amp;client_id=18839eda02dc42e39ddfe9b7f77d1b61";
         $.getJSON(url, getInstagramPhotos);
     });
     
@@ -45,7 +45,7 @@ $('#weatherpage').on('pageinit', function(){
     $("#viewweather").on("click", function(){
         //URL to access Weather Source API.
         //Weather key = 1cfe0a133d6e5228
-        var urlAdd = "http://api.wunderground.com/api/1cfe0a133d6e5228/conditions/q/33767.json"
+        var urlAdd = "http://api.wunderground.com/api/1cfe0a133d6e5228/conditions/q/33767.json";
     //    $.getJSON(url, getWeatherData);
     //});
     //
@@ -70,8 +70,8 @@ $('#weatherpage').on('pageinit', function(){
                 $("#weatherdata").append(temp).append(feelsLike).append(heatIndex).append(precip).append(image);
                
             }
-        })
-    })
+        });
+    });
     
     
-})
+});

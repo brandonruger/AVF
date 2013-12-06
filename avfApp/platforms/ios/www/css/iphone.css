@@ -10,3 +10,14 @@
 a {
     font: 5px;
 }
+
+img[alt] {
+    border: 1px solid blue;
+    max-width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#instagramdata {
+    list-style-type: none;
+}

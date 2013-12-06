@@ -1,0 +1,22 @@
+/*Brandon Ruger
+ *AVF 1312
+ *CSS for iPad Horizontal Display*/
+
+#courseinfo {
+    margin-left: 5px;
+    padding-left: 1px;
+}
+
+a {
+    font: 5px;
+}
+
+img[alt] {
+    border: 1px solid red;
+    max-width: 20%;
+    float: left;
+}
+
+#instagramdata {
+    list-style-type: none;
+}
