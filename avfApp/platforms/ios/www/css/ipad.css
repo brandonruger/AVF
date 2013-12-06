@@ -4,7 +4,12 @@
 
 #courseinfo {
     margin-left: 5px;
-    padding-left: 1px;
+    padding-left: 10px;
+    list-style-type: none;
+    border: 1px solid black;
+    background-image: url(img/beach.jpg);
+    background-position: left center;
+    max-width: 100%;
 }
 
 a {
@@ -19,4 +24,8 @@ img[alt] {
 
 #instagramdata {
     list-style-type: none;
+}
+
+section {
+    background-image: url(img/background.png);
 }
