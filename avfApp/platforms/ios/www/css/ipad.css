@@ -10,6 +10,7 @@
     background-image: url(img/beach.jpg);
     background-position: left center;
     background-repeat: no-repeat;
+    background-size: cover;
     max-width: 100%;
     font: 20pt Helvetica;
 }
@@ -28,8 +29,9 @@ img[alt] {
     list-style-type: none;
 }
 
-section {
+section[data-role="page"] {
     background-image: url(img/background.png);
+    background-size: cover;
 }
 
 ul li a {
