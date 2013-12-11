@@ -108,7 +108,7 @@ $('#geolocpage').on('pageinit', function(){
              
              //To run if an error occurs
              var error = function (){
-                 alert("Error, please try again!");
+                alert("Error, please try again!");
              }
         });
     };
