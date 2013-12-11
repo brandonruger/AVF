@@ -54,7 +54,7 @@
                 
                 <ul data-role="listview" data-inset="true">
                     <li data-role="list-divider">iOS/Android Native Features:</li>
-                    <li><a href="#">Geolocation - Nearby Beaches</a></li>
+                    <li><a href="geolocpage">Geolocation - Nearby Beaches</a></li>
                     <li><a href="#">Camera</a></li>
                     <li><a href="#">Contacts</a></li>
                     <li><a href="#">Compass</a></li>
@@ -170,6 +170,30 @@
                 <a href="#" data-role="button" id="viewweather">View Weather</a>
                 <h2>The Current Weather in Clearwater Beach is:</h2>
                 <ul id="weatherdata">                    
+                    
+                </ul>
+            
+            <footer data-role="footer" data-position="fixed">
+                <section data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
+                        <li><a href="#research">Research</a></li>
+                    </ul>
+                </section>
+            </footer>
+            </section>
+        </section>
+        
+        <!--Geolocation Page-->
+        <section data-role="page" id="geolocpage" data-add-back-btn="true">
+            <header data-role="header" data-position="fixed">
+                <h1>Geolocation</h1>
+            </header>
+            
+            <section data-role="content">
+                <a href="#" data-role="button" id="getlocbutton">Get Current Location</a>
+                <h2>Current Location:</h2>
+                <ul id="geodata">                    
                     
                 </ul>
             
