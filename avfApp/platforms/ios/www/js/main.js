@@ -113,3 +113,32 @@ $('#geolocpage').on('pageinit', function(){
         });
     };
 });
+
+$('#camerapage').on('pageinit', function(){
+    
+    document.addEventListener("deviceready", getCamera);
+    
+    var getCamera = function(){
+   
+        //Function to get current location
+        $("#getpicbutton").on("click", function(){
+            
+            //Pull up camera to take a picture
+            navigator.camera.getPicture(success, error, {
+                quality: 50,
+                destinationType: Camera.DestinationType.FILE_URI
+                });
+            
+            var success = function (pictureInfo) {
+                console.log(pictureInfo);
+            };
+             
+             
+             
+             //To run if an error occurs
+             var error = function (){
+                alert("Error, please try again!");
+             }
+        });
+    };
+});
