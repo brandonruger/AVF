@@ -77,33 +77,68 @@ $('#weatherpage').on('pageinit', function(){
 });
 
 $('#geolocpage').on('pageinit', function(){
+    
+    document.addEventListener("deviceready", getGeoLocation);
+    
+    var getGeoLocation = function(){
    
-   //Function to get current location
-   $("#getlocbutton").on("click", function(){
-        
-        //To access geolocation data
-        navigator.geolocation.getCurrentPosition(success, error);
-        
-        //Function to run if geolocation data pulls successfully
-        var success = function (currentPos) {
-         console.log(currentPos);
-         
-         //Latitude/ Longitude positions
-         var latPos = currentPos.coords.latitude;
-         var longPos = currentPos.coords.longitude;
-         
-         //Google Maps API Key = AIzaSyDDS7GwILMDnIHueYHvMLyjdT84s93DIrI
-         
-         //URL to access static Google Map for Geolocation
-         var mapUrl = "<img src='http://maps.googleapis.com/maps/api/staticmap?center=" + latPos + "," + longPos + "&zoom=13&size=600x300&key=AIzaSyDDS7GwILMDnIHueYHvMLyjdT84s93DIrI' />";
-         
-         $("#geodata").append(mapUrl);
-        
-        };
-        
-        //To run if an error occurs
-        var error = function (){
-            alert("Error, please try again!");
-        }
-   });
+        //Function to get current location
+        $("#getlocbutton").on("click", function(){
+             
+             
+             //To access geolocation data
+             navigator.geolocation.getCurrentPosition(success, error);
+             
+             //Function to run if geolocation data pulls successfully
+             var success = function (currentPos) {
+              console.log(currentPos);
+              
+              //Latitude/ Longitude positions
+              var latPos = currentPos.coords.latitude;
+              var longPos = currentPos.coords.longitude;
+              
+              //Google Maps API Key = AIzaSyDDS7GwILMDnIHueYHvMLyjdT84s93DIrI
+              
+              //URL to access static Google Map for Geolocation
+              var mapUrl = "<img src='http://maps.googleapis.com/maps/api/staticmap?center=" + latPos + "," + longPos + "&zoom=13&size=600x300&key=AIzaSyDDS7GwILMDnIHueYHvMLyjdT84s93DIrI' />";
+              
+              $("#geodata").append(mapUrl);
+             
+             };
+             
+             //To run if an error occurs
+             var error = function (){
+                alert("Error, please try again!");
+             }
+        });
+    };
+});
+
+$('#camerapage').on('pageinit', function(){
+    
+    document.addEventListener("deviceready", getCamera);
+    
+    var getCamera = function(){
+   
+        //Function to get current location
+        $("#getpicbutton").on("click", function(){
+            
+            //Pull up camera to take a picture
+            navigator.camera.getPicture(success, error, {
+                quality: 50,
+                destinationType: Camera.DestinationType.FILE_URI
+                });
+            
+            var success = function (pictureInfo) {
+                console.log(pictureInfo);
+            };
+             
+             
+             
+             //To run if an error occurs
+             var error = function (){
+                alert("Error, please try again!");
+             }
+        });
+    };
 });
