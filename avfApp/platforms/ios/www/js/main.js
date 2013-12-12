@@ -93,12 +93,14 @@ var getBeachApp = function(){
                  
                  //Function to run if geolocation data pulls successfully
                  var success = function (currentPos) {
-                  console.log(currentPos);
+                  alert(currentPos);
                   
                   //Latitude/ Longitude positions
                   var latPos = currentPos.coords.latitude;
                   var longPos = currentPos.coords.longitude;
                   
+                  alert(latPos);
+                  alert(longPos);
                   //Google Maps API Key = AIzaSyDDS7GwILMDnIHueYHvMLyjdT84s93DIrI
                   
                   //URL to access static Google Map for Geolocation
