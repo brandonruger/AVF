@@ -50,14 +50,6 @@ var getBeachApp = function(){
             //URL to access Weather Source API.
             //Weather key = 1cfe0a133d6e5228
             var urlAdd = "http://api.wunderground.com/api/1cfe0a133d6e5228/conditions/q/33767.json";
-        //    $.getJSON(url, getWeatherData);
-        //});
-        //
-        //var getWeatherData = function(forecast) {
-        //    
-        //    console.log(forecast); //To see what weather data I receive from Weather Source.
-        //    
-        //}; //end getWeatherData
         
             $.ajax({
                 url: urlAdd,
@@ -80,83 +72,45 @@ var getBeachApp = function(){
         
     });
     
-    //$('#geolocpage').on('pageinit', function(){
-    //        
-    //    var getGeoLocation = function(){
-    //   
-    //        //Function to get current location
-    //        $("#getlocbutton").on("click", function(){
-    //             
-    //             
-    //             //To access geolocation data
-    //             navigator.geolocation.getCurrentPosition(success, error);
-    //             
-    //             //Function to run if geolocation data pulls successfully
-    //             var success = function (currentPos) {
-    //              alert(currentPos);
-    //              
-    //              //Latitude/ Longitude positions
-    //              var latPos = currentPos.coords.latitude;
-    //              var longPos = currentPos.coords.longitude;
-    //              
-    //              alert(latPos);
-    //              alert(longPos);
-    //              //Google Maps API Key = AIzaSyDDS7GwILMDnIHueYHvMLyjdT84s93DIrI
-    //              
-    //              //URL to access static Google Map for Geolocation
-    //              var mapUrl = "<img src='http://maps.googleapis.com/maps/api/staticmap?center=" + latPos + "," + longPos + "&zoom=13&size=600x300&key=AIzaSyDDS7GwILMDnIHueYHvMLyjdT84s93DIrI' />";
-    //              
-    //              $("#geodata").append(mapUrl);
-    //             
-    //             };
-    //             
-    //             //To run if an error occurs
-    //             var error = function (){
-    //                alert("Error, please try again!");
-    //             };
-    //        });
-    //    };
-    //});
-    
-        $('#geolocpage').on('pageinit', function(){
+    $('#geolocpage').on('pageinit', function(){
             
-
+        var getGeoLocation = function(){
+       
             //Function to get current location
-            $("#getlocbutton").on("click", getGeoLocation);
+            $("#getlocbutton").on("click", function(){
                  
                  
-                 var getGeoLocation = function(){
-                 //To access geolocation data
-                 navigator.geolocation.getCurrentPosition(success, error);
-                 };
+                //To access geolocation data
+                navigator.geolocation.getCurrentPosition(success, error);
                  
                  //Function to run if geolocation data pulls successfully
-                 var success = function (currentPos) {
-                  
-                  //Latitude/ Longitude positions
-                  var latPos = "<p>" + currentPos.coords.latitude + "</p>";
-                  var longPos = "<p>" + currentPos.coords.longitude + "</p>";
-                  
-                  $("#geodata").append(latPos).append(longPos);
+                var success = function (currentPos) {
+                    alert(currentPos);
+                      
+                    //Latitude/ Longitude positions
+                    var latPos = currentPos.coords.latitude;
+                    var longPos = currentPos.coords.longitude;
+                      
+                    alert(latPos);
+                    alert(longPos);
                 
+                //Google Maps API Key = AIzaSyDDS7GwILMDnIHueYHvMLyjdT84s93DIrI
                   
-                  //Google Maps API Key = AIzaSyDDS7GwILMDnIHueYHvMLyjdT84s93DIrI
+                //URL to access static Google Map for Geolocation
+                var mapUrl = "<img src='http://maps.googleapis.com/maps/api/staticmap?center=" + latPos + "," + longPos + "&zoom=13&size=600x300&key=AIzaSyDDS7GwILMDnIHueYHvMLyjdT84s93DIrI' />";
                   
-                  //URL to access static Google Map for Geolocation
-                  //var mapUrl = "<img src='http://maps.googleapis.com/maps/api/staticmap?center=" + latPos + "," + longPos + "&zoom=13&size=600x300&key=AIzaSyDDS7GwILMDnIHueYHvMLyjdT84s93DIrI' />";
-                  //
-                  //$("#geodata").append(mapUrl);
+                $("#geodata").append(mapUrl);
                  
-                 };
+                };
                  
                  //To run if an error occurs
-                 var error = function (){
+                var error = function (){
                     alert("Error, please try again!");
                  };
-            
-
+            });
+        };
     });
-    
+
     $('#camerapage').on('pageinit', function(){
     
         var getCamera = function(){
@@ -176,10 +130,10 @@ var getBeachApp = function(){
                  
                  
                  
-                 //To run if an error occurs
-                 var error = function (){
-                    alert("Error, please try again!");
-                 };
+                //To run if an error occurs
+                var error = function (){
+                alert("Error, please try again!");
+                };
             });
         };
     });
