@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5AC8B032-562C-4FFE-9515-B71D0D532B56</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NewBeachApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F47305C5-E2BA-454F-BCCF-765E5F07C30A</key>
+		<string>https://github.com/r02548/AVF.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NewTestApp/platforms/ios/NewBeachApp.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F47305C5-E2BA-454F-BCCF-765E5F07C30A</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/r02548/AVF.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F47305C5-E2BA-454F-BCCF-765E5F07C30A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F47305C5-E2BA-454F-BCCF-765E5F07C30A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AVF Projects</string>
+		</dict>
+	</array>
+</dict>
+</plist>

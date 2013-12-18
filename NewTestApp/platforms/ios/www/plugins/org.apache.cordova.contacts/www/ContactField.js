@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*
+=======
+cordova.define("org.apache.cordova.contacts.ContactField", function(require, exports, module) {/*
+>>>>>>> master
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -35,3 +39,7 @@ var ContactField = function(type, value, pref) {
 };
 
 module.exports = ContactField;
+<<<<<<< HEAD
+=======
+});
+>>>>>>> master

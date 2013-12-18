@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*
+=======
+cordova.define("org.apache.cordova.contacts.contacts", function(require, exports, module) {/*
+>>>>>>> master
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -74,3 +78,7 @@ var contacts = {
 };
 
 module.exports = contacts;
+<<<<<<< HEAD
+=======
+});
+>>>>>>> master

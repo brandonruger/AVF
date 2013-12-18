@@ -4,6 +4,7 @@
 document.addEventListener("deviceready", getBeachApp, false);
 
 var getBeachApp = function(){
+    alert("Device ready is working!");
 
     $('#home').on('pageinit', function(){
         //code needed for home page goes here
@@ -13,7 +14,7 @@ var getBeachApp = function(){
         //code needed for research page goes here
     });
     
-    $('#instagrampage').on('pageinit', function(){
+    //$('#instagrampage').on('pageinit', function(){
         //code needed for instagram API page goes here
         
         $("#viewphotos").on("click", function(){
@@ -41,7 +42,7 @@ var getBeachApp = function(){
             
         }; //end getInstagramPhotos()
         
-    });
+    //});
     
     $('#weatherpage').on('pageinit', function(){
         //code needed for weather API page goes here.
@@ -72,12 +73,12 @@ var getBeachApp = function(){
         
     });
     
-    $('#geolocpage').on('pageinit', function(){
+    //$('#geolocpage').on('pageinit', function(){
             
-        var getGeoLocation = function(){
        
             //Function to get current location
             $("#getlocbutton").on("click", function(){
+                alert("geo button was clicked!");
                  
                  
                 //To access geolocation data
@@ -108,12 +109,10 @@ var getBeachApp = function(){
                     alert("Error, please try again!");
                  };
             });
-        };
-    });
+    //});
 
     $('#camerapage').on('pageinit', function(){
-    
-        var getCamera = function(){
+
        
             //Function to get current location
             $("#getpicbutton").on("click", function(){
@@ -135,6 +134,5 @@ var getBeachApp = function(){
                 alert("Error, please try again!");
                 };
             });
-        };
     });
 };

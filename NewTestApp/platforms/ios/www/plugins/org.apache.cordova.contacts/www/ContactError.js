@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*
+=======
+cordova.define("org.apache.cordova.contacts.ContactError", function(require, exports, module) {/*
+>>>>>>> master
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -40,3 +44,7 @@ ContactError.NOT_SUPPORTED_ERROR = 5;
 ContactError.PERMISSION_DENIED_ERROR = 20;
 
 module.exports = ContactError;
+<<<<<<< HEAD
+=======
+});
+>>>>>>> master

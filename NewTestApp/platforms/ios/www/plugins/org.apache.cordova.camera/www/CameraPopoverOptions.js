@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*
+=======
+cordova.define("org.apache.cordova.camera.CameraPopoverOptions", function(require, exports, module) {/*
+>>>>>>> master
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -35,3 +39,7 @@ var CameraPopoverOptions = function(x,y,width,height,arrowDir){
 };
 
 module.exports = CameraPopoverOptions;
+<<<<<<< HEAD
+=======
+});
+>>>>>>> master
