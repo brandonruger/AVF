@@ -1,7 +1,7 @@
 /*Brandon Ruger
  *AVF 1312*/
 
-document.addEventListener("deviceready", getBeachApp, false);
+
 
 var getBeachApp = function(){
     alert("Device ready is working!");
@@ -136,3 +136,5 @@ var getBeachApp = function(){
             });
     });
 };
+
+document.addEventListener("deviceready", getBeachApp, false);
