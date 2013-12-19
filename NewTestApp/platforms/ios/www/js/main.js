@@ -76,7 +76,7 @@ var geoSuccess = function(currentPos){
     //Google Maps API Key = AIzaSyDDS7GwILMDnIHueYHvMLyjdT84s93DIrI
                   
     //URL to access static Google Map for Geolocation
-    var mapUrl = "<img src='http://maps.googleapis.com/maps/api/staticmap?center=" + latPos + "," + longPos + "&zoom=12&size=400x400&sensor=true&key=AIzaSyDDS7GwILMDnIHueYHvMLyjdT84s93DIrI' alt='Google Map Image' />";
+    var mapUrl = "<img src='http://maps.googleapis.com/maps/api/staticmap?center=" + latPos + "," + longPos + "&zoom=12&size=640x640&sensor=true&key=AIzaSyDDS7GwILMDnIHueYHvMLyjdT84s93DIrI' />";
     
     //Append map image to geolocation page.              
     $("#geodata").append(mapUrl);
