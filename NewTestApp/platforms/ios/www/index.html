@@ -46,8 +46,8 @@
                 </ul>
                 <ul data-role="listview" data-inset="true">
                     <li data-role="list-divider">Data/Native Feature Mashups</li>
-                    <li><a href="#">Accuweather Data/ Geolocation</a></li>
-                    <li><a href="#">Instagram Data/ Geolocation</a></li>
+                    <li><a href="weathermashpage">Weather Data/ Geolocation</a></li>
+                    <li><a href="instagrammashpage">Instagram Data/ Photo</a></li>
                 </ul>
                 <ul data-role="listview" data-inset="true">
                     <li data-role="list-divider">Research</li>
@@ -303,6 +303,54 @@
         <section data-role="page" id="browserpage" data-add-back-btn="true">
             <header data-role="header" data-position="fixed">
                 <h1>In-App Browser</h1>
+            </header>
+            
+            <section data-role="content">
+                <a href="#" data-role="button" id="browserbutton">In-App Browser</a>
+                <h2>Compass:</h2>
+                <ul id="browser">                    
+                    
+                </ul>
+            
+            <footer data-role="footer" data-position="fixed">
+                <section data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
+                        <li><a href="#research">Research</a></li>
+                    </ul>
+                </section>
+            </footer>
+            </section>
+        </section>
+        
+        <!--Weather Mash-Up Page-->
+        <section data-role="page" id="weathermashpage" data-add-back-btn="true">
+            <header data-role="header" data-position="fixed">
+                <h1>Weather / GeoLocation Mash-Up</h1>
+            </header>
+            
+            <section data-role="content">
+                <a href="#" data-role="button" id="weathermashbutton">View Weather for Current Location</a>
+                <h2>Weather / GeoLocation Mash-Up:</h2>
+                <ul id="weathermashdata">                    
+                    
+                </ul>
+            
+            <footer data-role="footer" data-position="fixed">
+                <section data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
+                        <li><a href="#research">Research</a></li>
+                    </ul>
+                </section>
+            </footer>
+            </section>
+        </section>
+        
+        <!--Instagram Mash-Up Page-->
+        <section data-role="page" id="instagrammashpage" data-add-back-btn="true">
+            <header data-role="header" data-position="fixed">
+                <h1>Instagram / Camera Mash-Up</h1>
             </header>
             
             <section data-role="content">
