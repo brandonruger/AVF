@@ -45,11 +45,17 @@ var getBeachApp = function(){
         window.open('http://www.google.com', '_blank', 'location=yes');
     });
     
-    
+    //Mash Weather & GeoLocation
     $("#weathermashbutton").on('click', function(){
         //Call GeoLocation plugin to use with weather data
         navigator.geolocation.getCurrentPosition(geoWeatherSuccess, geoWeatherError);
 
+    });
+    
+    //Mash Instagram & GeoLocation
+    $("#instamashbutton").on('click', function(){
+        //Call GeoLocation plugin to use with Instagram API
+        navigator.geoLocation.getCurrentPosition(instaWeatherSuccess, instaWeatherError);
     });
     
     
@@ -210,6 +216,53 @@ var geoWeatherError = function(error){
     alert('code: '    + error.code    + '\n' +
         'message: ' + error.message + '\n');
 }; //End Weather/GeoLocation error
+
+//Instagram / GeoLocation Mash-up
+
+//Instagram/GeoLocation Success
+var instaGeoSuccess = function(instaPos){
+    alert(instaPos);
+                      
+    //Latitude/ Longitude positions
+    var instaLat = instaPos.coords.latitude;
+    var instaLong = instaPos.coords.longitude;
+    alert(instaLat);
+    alert(instaLong);
+    
+    //URL to access recent Instagram photos that are based on location using the latitude/longitude from GeoLocation data
+    var url = "https://api.instagram.com/v1/locations/search?lat=" + instaLat + "&lng=" + instaLong + "&client_id=18839eda02dc42e39ddfe9b7f77d1b61";
+    $.getJSON(url, getInstagramGeo);
+});
+        
+var getInstagramGeo = function(geoPics) {
+            
+    alert(geoPics); //To see what data I am getting back from Instagram.
+            
+    //example HTML for pictures:
+    // <li><img src='{url}' alt='{caption}' /></li>
+            
+    $.each(geoPics.data, function(index, instaGeoData){
+        console.log(instaGeoData.images.standard_resolution.url); //Check to make sure targeting right URL's for photos.
+        var geoPhotos = "<li><img src='" + instaGeoData.images.standard_resolution.url + "' alt='" + instaGeoData.likes.count + "' /></li>";
+                
+        $("#instamashdata").append(geoPhotos); //Add downloaded photos into "instamashdata" ul.
+                
+    }); //end each loop
+            
+            
+            
+}; //end getInstagramPhotos()
+    
+    
+    
+}; //End instaGeoSuccess
+
+//Instagram/GeoLocation Error
+var instaGeoError = function(instaError){
+    alert("Geolocation is not working!");
+    alert('code: '    + instaError.code    + '\n' +
+        'message: ' + instaError.message + '\n');
+}; //End instaGeoError
 
 
 //Device Ready Listener - will only work if I put this at the bottom of the page.
