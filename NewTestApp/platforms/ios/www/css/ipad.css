@@ -69,3 +69,8 @@ li[data-role] {
     float: left;
     }
 }
+
+#googlemap {
+    height: 75%;
+    width: 75%;
+}
