@@ -15,6 +15,7 @@ var getBeachApp = function(){
     
     //Take a picture when pic button is clicked
     $("#getpicbutton").on('click', function(){
+        alert("Camera button clicked");
         //Call Camera plugin to take a picture
         navigator.camera.getPicture(camSuccess, camError, {
             quality: 50,
@@ -24,9 +25,29 @@ var getBeachApp = function(){
     
     //View compass when button is clicked
     $("#getcompassbutton").on('click', function(){
-        //Call compass plugin
+        alert("Compass button clicked");
+        //Call getcompassbuttoncompass plugin
         navigator.compass.getCurrentHeading(compassSuccess, compassError);
     });
+    
+    //View device info when button is clicked
+    $("#devicebutton").on('click', function(){
+        alert("Trying to view device info");
+        var element = document.getElementById('deviceinfo');
+        alert(element);
+        alert(window.device.model);
+        element.innerHTML = 'Device Model: '    + device.model    + '<br />' +
+                            'Device Cordova: '  + device.cordova  + '<br />' +
+                            'Device Platform: ' + device.platform + '<br />' +
+                            'Device UUID: '     + device.uuid     + '<br />' +
+                            'Device Version: '  + device.version  + '<br />';
+    
+    });
+    
+    //View In-App Browser
+    $("#browserbutton").on('click', function(){
+        window.open('http://www.google.com', '_blank', 'location=yes');
+    })
     
     
 }
@@ -77,8 +98,8 @@ var compassSuccess = function(compassHeading){
 }; //End compassSuccess
 
 //Compass error
-var compassError = function(){
-    alert('Compass is not working!');
+var compassError = function(compassError){
+    alert('Compass is not working: ' + compassError.code);
 }; //End compassError
 
 
