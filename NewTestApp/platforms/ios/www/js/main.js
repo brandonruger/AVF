@@ -55,7 +55,7 @@ var getBeachApp = function(){
     //Mash Instagram & GeoLocation
     $("#instamashbutton").on('click', function(){
         //Call GeoLocation plugin to use with Instagram API
-        navigator.geoLocation.getCurrentPosition(instaWeatherSuccess, instaWeatherError);
+        navigator.geolocation.getCurrentPosition(instaGeoSuccess, instaGeoError);
     });
     
     
@@ -230,9 +230,9 @@ var instaGeoSuccess = function(instaPos){
     alert(instaLong);
     
     //URL to access recent Instagram photos that are based on location using the latitude/longitude from GeoLocation data
-    var url = "https://api.instagram.com/v1/locations/search?lat=" + instaLat + "&lng=" + instaLong + "&client_id=18839eda02dc42e39ddfe9b7f77d1b61";
+    var url = "https://api.instagram.com/v1/media/search?lat=" + instaLat + "&lng=" + instaLong + "&amp;client_id=18839eda02dc42e39ddfe9b7f77d1b61";
     $.getJSON(url, getInstagramGeo);
-});
+};
         
 var getInstagramGeo = function(geoPics) {
             
@@ -251,11 +251,9 @@ var getInstagramGeo = function(geoPics) {
             
             
             
-}; //end getInstagramPhotos()
+}; //end instaGeoSuccess()
     
     
-    
-}; //End instaGeoSuccess
 
 //Instagram/GeoLocation Error
 var instaGeoError = function(instaError){
