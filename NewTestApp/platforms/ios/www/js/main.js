@@ -37,16 +37,23 @@ var getBeachApp = function(){
         alert("Trying to view device info");
         var devInfo = document.getElementById('deviceinfo');
         devInfo.innerHTML = 'Model: '    + device.model    + '<br />' +
-                            'Platform: ' + device.platform + '<br />'
+                            'Platform: ' + device.platform + '<br />';
     });
     
     //View In-App Browser
     $("#browserbutton").on('click', function(){
         window.open('http://www.google.com', '_blank', 'location=yes');
-    })
+    });
     
     
-}
+    $("#weathermashbutton").on('click', function(){
+        //Call GeoLocation plugin to use with weather data
+        navigator.geolocation.getCurrentPosition(geoWeatherSuccess, geoWeatherError);
+
+    });
+    
+    
+}; //end getBeachApp()
 
 //Functions for Plugins
 
@@ -97,6 +104,7 @@ var compassSuccess = function(compassHeading){
 var compassError = function(compassError){
     alert('Compass is not working: ' + compassError.code);
 }; //End compassError
+
 
 
 //End functions for plugins
@@ -153,6 +161,55 @@ var getInstagramPhotos = function(feed) {
             
             
 }; //end getInstagramPhotos()
+
+
+
+//Mash-Ups
+
+//Weather / GeoLocation Mash-Up
+//Weather/GeoLocation success
+var geoWeatherSuccess = function(weatherPos){
+    alert(weatherPos);
+                      
+    //Latitude/ Longitude positions
+    var geoLat = weatherPos.coords.latitude;
+    var geoLong = weatherPos.coords.longitude;
+    alert(geoLat);
+    alert(geoLong);
+    
+    //URL to access Weather Source API.
+    //Weather key = 1cfe0a133d6e5228
+    var urlWeather = "http://api.wunderground.com/api/1cfe0a133d6e5228/conditions/q/" + geoLat + "," + geoLong + ".json";
+        
+    $.ajax({
+        url: urlWeather,
+        dataType: "jsonp",
+        success: function(weatherGeo){
+            alert(weatherGeo);
+                    
+            var curTemp = "<li>Temperature: " + weatherGeo.current_observation.temperature_string + "</li>";
+            var curFeels = "<li>Feels Like: " + weatherGeo.current_observation.feelslike_string + "</li>";
+            var curHeat = "<li>Heat Index: " + weatherGeo.current_observation.heat_index_string + "</li>";
+            var curPrecip = "<li>Precipiation: " + weatherGeo.current_observation.precip_today_string + "</li>";
+            var curImg = "<li><img src='" + weatherGeo.current_observation.icon_url + "' alt='" + weatherGeo.current_observation.icon + "' /></li>";
+                    
+            $("#weathermashdata").append(curTemp).append(curFeels).append(curHeat).append(curPrecip).append(curImg);
+                   
+        },
+        error: function(weatherErrMsg){
+            alert("Can't retrieve weather data!");
+        }
+    });
+                
+    
+}; //End Weather/GeoLocation success
+
+//Weather/GeoLocation error
+var geoWeatherError = function(error){
+    alert("Geolocation is not working!");
+    alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+}; //End Weather/GeoLocation error
 
 
 //Device Ready Listener - will only work if I put this at the bottom of the page.
