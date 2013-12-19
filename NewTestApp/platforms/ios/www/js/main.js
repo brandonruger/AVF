@@ -35,15 +35,9 @@ var getBeachApp = function(){
     //View device info when button is clicked
     $("#devicebutton").on('click', function(){
         alert("Trying to view device info");
-        var element = document.getElementById('deviceinfo');
-        alert(element);
-        alert(window.device.model);
-        element.innerHTML = 'Device Model: '    + device.model    + '<br />' +
-                            'Device Cordova: '  + device.cordova  + '<br />' +
-                            'Device Platform: ' + device.platform + '<br />' +
-                            'Device UUID: '     + device.uuid     + '<br />' +
-                            'Device Version: '  + device.version  + '<br />';
-    
+        var devInfo = document.getElementById('deviceinfo');
+        devInfo.innerHTML = 'Model: '    + device.model    + '<br />' +
+                            'Platform: ' + device.platform + '<br />'
     });
     
     //View In-App Browser
