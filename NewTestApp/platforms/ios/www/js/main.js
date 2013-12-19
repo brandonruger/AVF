@@ -7,8 +7,18 @@ var getBeachApp = function(){
     //Test to make sure Device Ready is working
     alert("Device Ready is working");
     
-    //Call GeoLocation plugin to get location data
-    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+    $("#getlocbutton").on('click', function(){
+        //Call GeoLocation plugin to get location data
+        navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+    });
+    
+    $("#getpicbutton").on('click', function(){
+        //Call Camera plugin to take a picture
+        navigator.camera.getPicture(camSuccess, camError, {
+            quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI
+        });
+    });
     
     
 }
@@ -30,13 +40,23 @@ var geoSuccess = function(currentPos){
     
     //Append map image to geolocation page.              
     $("#geodata").append(mapUrl);
-}
+}; //End GeoLocation success
 
 //GeoLocation error
 var geoError = function(error){
     alert("Geolocation is not working!");
     alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
-}
+}; //End GeoLocation error
+
+//Camera success
+var camSuccess = function(image){
+    var newPic = document.getElementById('cameraphoto');
+    newPic.src = "data:image/jpeg;base64," + image;
+}; //End camSuccess
+
+var camError = function(errorMsg){
+    alert("Camera plugin failed due to: " + errorMsg);
+}; //End camError
 
 document.addEventListener("deviceready", getBeachApp, false);
