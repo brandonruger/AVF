@@ -103,7 +103,9 @@ var camError = function(errorMsg){
 
 //Compass success
 var compassSuccess = function(compassHeading){
-    alert('Heading: ' + compassHeading.magneticHeading);
+    var compassInfo = compassHeading.magneticHeading;
+    alert('Heading Info: ' + compassInfo);
+    $("#compasspointer").append(compassInfo);
 }; //End compassSuccess
 
 //Compass error
