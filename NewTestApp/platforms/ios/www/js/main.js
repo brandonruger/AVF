@@ -7,17 +7,25 @@ var getBeachApp = function(){
     //Test to make sure Device Ready is working
     alert("Device Ready is working");
     
+    //Pull GeoLocation Data when Geo button is clicked
     $("#getlocbutton").on('click', function(){
         //Call GeoLocation plugin to get location data
         navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
     });
     
+    //Take a picture when pic button is clicked
     $("#getpicbutton").on('click', function(){
         //Call Camera plugin to take a picture
         navigator.camera.getPicture(camSuccess, camError, {
             quality: 50,
             destinationType: Camera.DestinationType.FILE_URI
         });
+    });
+    
+    //View compass when button is clicked
+    $("#getcompassbutton").on('click', function(){
+        //Call compass plugin
+        navigator.compass.getCurrentHeading(compassSuccess, compassError);
     });
     
     
@@ -58,9 +66,20 @@ var camSuccess = function(image){
     newPic.src = "data:image/jpeg;base64," + image;
 }; //End camSuccess
 
+//Camera error
 var camError = function(errorMsg){
     alert("Camera plugin failed due to: " + errorMsg);
 }; //End camError
+
+//Compass success
+var compassSuccess = function(compassHeading){
+    alert('Heading: ' + compassHeading.magneticHeading);
+}; //End compassSuccess
+
+//Compass error
+var compassError = function(){
+    alert('Compass is not working!');
+}; //End compassError
 
 
 //End functions for plugins
