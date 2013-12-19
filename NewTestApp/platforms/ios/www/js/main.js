@@ -1,5 +1,6 @@
 /*Brandon Ruger
- *AVF 1312*/
+ *AVF 1312
+ *iOS App*/
 
 
 
@@ -28,6 +29,7 @@ var getBeachApp = function(){
         alert("Compass button clicked");
         //Call getcompassbuttoncompass plugin
         navigator.compass.getCurrentHeading(compassSuccess, compassError);
+    
     });
     
     //View device info when button is clicked
