@@ -1,6 +1,6 @@
 /*Brandon Ruger
  *AVF 1312
- *iOS App*/
+ *Android App*/
 
 
 
